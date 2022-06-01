@@ -5,3 +5,6 @@ mkdir backend
 inside frontend:
 npm install react-router-dom web3
 Create all components
+git commit -m "2) Done with all components."
+
+Deployed contract in backend folder

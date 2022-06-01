@@ -1,0 +1,2 @@
+useEffect(() => 
+const loadWeb3 = async () => 

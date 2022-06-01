@@ -1,1 +1,14 @@
-hello
+mkdir backend
+cd backend
+npm init --yes
+npm install --save-dev hardhat
+
+npx hardhat
+
+npm install dotenv
+create dotenv file, deploy.js
+update hardhat.config.js file 
+
+
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network rinkeby
