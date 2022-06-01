@@ -1,2 +1,23 @@
+    const [currentaccount, setCurrentaccount] = useState("");
+    const [loader, setloader] = useState(true);
+    const [SupplyChain, setSupplyChain] = useState();
+    const [RMSname, setRMSname] = useState();
+    const [MANname, setMANname] = useState();
+    const [DISname, setDISname] = useState();
+    const [RETname, setRETname] = useState();
+    const [RMSplace, setRMSplace] = useState();
+    const [MANplace, setMANplace] = useState();
+    const [DISplace, setDISplace] = useState();
+    const [RETplace, setRETplace] = useState();
+    const [RMSaddress, setRMSaddress] = useState();
+    const [MANaddress, setMANaddress] = useState();
+    const [DISaddress, setDISaddress] = useState();
+    const [RETaddress, setRETaddress] = useState();
+    const [RMS, setRMS] = useState();
+    const [MAN, setMAN] = useState();
+    const [DIS, setDIS] = useState();
+    const [RET, setRET] = useState();
+
 useEffect(() => 
 const loadWeb3 = async () => 
+const loadBlockchaindata = async () => 
