@@ -12,3 +12,6 @@ git commit -m "3) Done with deploying contract."
 
 Make all changes to RegisterFile.js
 git commit -m "5) Done with RegisterFile.js"
+
+Make all changes to OrderMedFile.js
+git commit -m "6) Done with OrderMedFile.js"
