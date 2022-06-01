@@ -13,7 +13,7 @@ const Home_Comp = () => {
             <button onClick={() => nav('/register')} className="btn btn-outline-primary btn-sm">Register</button>
             <br />
             <h5>Step 2: Owner should order medicines</h5>
-            <button onClick={() => nav('/addmed')} className="btn btn-outline-primary btn-sm">Order Medicines</button>
+            <button onClick={() => nav('/ordermed')} className="btn btn-outline-primary btn-sm">Order Medicines</button>
             <br />
             <h5>Step 3: Control Supply Chain</h5>
             <button onClick={() => nav('/supply')} className="btn btn-outline-primary btn-sm">Control Supply Chain</button>

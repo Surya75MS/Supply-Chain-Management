@@ -9,3 +9,6 @@ git commit -m "2) Done with all components."
 
 Deployed contract in backend folder
 git commit -m "3) Done with deploying contract."
+
+Make all changes to RegisterFile.js
+git commit -m "5) Done with RegisterFile.js"

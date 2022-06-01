@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3_MS from 'web3/dist/web3.min.js'
-import { useNavigate } from "react-router-dom"
 import { address, abi } from "./constants/index";
-import ABI from "../artifacts/SupplyChain.json"
 
 const Register_Comp = () => {
     const [currentaccount, setCurrentaccount] = useState("");
@@ -25,7 +23,6 @@ const Register_Comp = () => {
     const [DIS, setDIS] = useState();
     const [RET, setRET] = useState();
 
-    const nav = useNavigate()
     useEffect(() => {
         loadWeb3();
         loadBlockchaindata();
