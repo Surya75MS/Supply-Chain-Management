@@ -1,0 +1,49 @@
+address public Owner;
+constructor() public
+modifier onlyByOwner()
+enum STAGE
+
+uint256 public medicineCtr = 0;
+uint256 public rmsCtr = 0;
+uint256 public manCtr = 0;
+uint256 public disCtr = 0;
+uint256 public retCtr = 0;
+
+struct medicine
+mapping(uint256 => medicine) public MedicineStock;
+function showStage(uint256 _medicineID) public view returns (string memory)
+
+
+struct rawMaterialSupplier { address addr; uint256 id; //supplier id string name; //Name of the raw material supplier string place; //Place the raw material supplier is based in}
+mapping(uint256 => rawMaterialSupplier) public RMS;
+  
+struct manufacturer { address addr; uint256 id; //manufacturer id string name; //Name of the manufacturer string place; //Place the manufacturer is based in}
+mapping(uint256 => manufacturer) public MAN;
+  
+struct distributor { address addr; uint256 id; //distributor id string name; //Name of the distributor string place; //Place the distributor is based in}
+mapping(uint256 => distributor) public DIS;
+   
+struct retailer { address addr; uint256 id; //retailer id string name; //Name of the retailer string place; //Place the retailer is based in}
+mapping(uint256 => retailer) public RET;
+
+
+function addRMS(address _address,string memory _name,string memory _place) public onlyByOwner 
+function addManufacturer(address _address,string memory _name,string memory _place) public onlyByOwner 
+function addDistributor(address _address,string memory _name,string memory _place) public onlyByOwner
+function addRetailer(address _address,string memory _name,string memory _place) public onlyByOwner
+
+
+function RMSsupply(uint256 _medicineID) public 
+function findRMS(address _address) private view returns (uint256) 
+
+function Manufacturing(uint256 _medicineID) public 
+function findMAN(address _address) private view returns (uint256) 
+
+function Distribute(uint256 _medicineID) public 
+function findDIS(address _address) private view returns (uint256)
+
+function Retail(uint256 _medicineID) public 
+function findRET(address _address) private view returns (uint256)
+
+function sold(uint256 _medicineID) public
+function addMedicine(string memory _name, string memory _description) public onlyByOwner

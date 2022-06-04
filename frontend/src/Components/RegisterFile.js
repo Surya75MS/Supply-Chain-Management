@@ -23,6 +23,8 @@ const Register_Comp = () => {
     const [DIS, setDIS] = useState();
     const [RET, setRET] = useState();
 
+    const owner = '0xa39231A630EFd4E34F760cC499aA0BC915B43B75';
+
     useEffect(() => {
         loadWeb3();
         loadBlockchaindata();
@@ -49,6 +51,7 @@ const Register_Comp = () => {
         const account = accounts[0];
         // console.log(account);
         setCurrentaccount(account);
+        
         // console.log(networkId);
 
         // const networkId = await web3.eth.net.getId();
@@ -56,9 +59,11 @@ const Register_Comp = () => {
 
         // console.log(networkData);
         // console.log("Hello", networkData.address);
-
+        console.log("Before")
         const supplychain = new web3.eth.Contract(abi, address);
         setSupplyChain(supplychain);
+        console.log("After")
+
         var i;
 
         const rmsCtr = await supplychain.methods.rmsCtr().call();
@@ -218,7 +223,7 @@ const Register_Comp = () => {
                 </thead>
                 <tbody>
                     {Object.keys(RMS).map(function (key) {
-                        console.log(key)
+                        // console.log(key)
                         return (
                             <tr key={key}>
                                 <td>{RMS[key].id}</td>

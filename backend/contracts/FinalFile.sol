@@ -87,9 +87,9 @@ contract SupplyChain_Contract {
         string name; //Name of the raw material supplier
         string place; //Place the raw material supplier is based in
     }
-
     //To store all the raw material suppliers on the blockchain
     mapping(uint256 => rawMaterialSupplier) public RMS;
+
 
     //To store information about manufacturer
     struct manufacturer {
@@ -98,9 +98,9 @@ contract SupplyChain_Contract {
         string name; //Name of the manufacturer
         string place; //Place the manufacturer is based in
     }
-
     //To store all the manufacturers on the blockchain
     mapping(uint256 => manufacturer) public MAN;
+
 
     //To store information about distributor
     struct distributor {
@@ -109,9 +109,9 @@ contract SupplyChain_Contract {
         string name; //Name of the distributor
         string place; //Place the distributor is based in
     }
-
     //To store all the distributors on the blockchain
     mapping(uint256 => distributor) public DIS;
+
 
     //To store information about retailer
     struct retailer {
@@ -120,9 +120,9 @@ contract SupplyChain_Contract {
         string name; //Name of the retailer
         string place; //Place the retailer is based in
     }
-
     //To store all the retailers on the blockchain
     mapping(uint256 => retailer) public RET;
+    
 
     //To add raw material suppliers. Only contract owner can add a new raw material supplier
     function addRMS(

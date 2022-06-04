@@ -15,3 +15,28 @@ git commit -m "5) Done with RegisterFile.js"
 
 Make all changes to OrderMedFile.js
 git commit -m "6) Done with OrderMedFile.js"
+
+Completed supply and track js files.
+git commit -m "7) Done with filling all the components files."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Improvements:
+1. Hard coded owner address rather than fetching it from smart contract.
