@@ -8,21 +8,20 @@ import Track_Comp from './Components/TrackFile';
 import OrderMed_Comp from './Components/OrderMed';
 import { Navbar_Comp } from './Components/NavFile';
 import Landing_Comp from './Components/LandingFile';
+import Admin_Comp from './Components/AdminFile';
 
 function App() {
   return (
     <div>
       {/* <Navbar_Comp /> */}
-
-
-
       <Routes>
         <Route path="/" element={<Landing_Comp />} />
-        <Route path="/home" element={<Home_Comp />} />
+        {/* <Route path="/home" element={<Home_Comp />} /> */}
         <Route path="/register" element={<Register_Comp />} />
         <Route path="/ordermed" element={<OrderMed_Comp />} />
         <Route path="/supply" element={<Supply_Comp />} />
         <Route path="/track" element={<Track_Comp />} />
+        <Route path="/AdminAccess" element={<Admin_Comp />} />
       </Routes>
     </div>
   );

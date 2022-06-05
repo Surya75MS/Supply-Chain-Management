@@ -19,6 +19,13 @@ git commit -m "6) Done with OrderMedFile.js"
 Completed supply and track js files.
 git commit -m "7) Done with filling all the components files."
 
+Added landing.js.
+Done with couple of casual commits. 
+Done with comparing user with owner in landing page.
+Done with AdminFile.js.
+Discarding HomeFile.js which is replaced by AdminFile.js.
+
+
 
 
 
@@ -41,3 +48,5 @@ git commit -m "7) Done with filling all the components files."
 Improvements:
 1. Hard coded owner address rather than fetching it from smart contract.
 2. Connect wallet button in homescreen has to change to pointer on mouse hover.
+3. Hamburger icon not opening when screen is shrinked.
+4. Improve resuing of code.
