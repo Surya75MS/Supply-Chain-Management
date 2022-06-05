@@ -23,8 +23,6 @@ const Register_Comp = () => {
     const [DIS, setDIS] = useState();
     const [RET, setRET] = useState();
 
-    const owner = '0xa39231A630EFd4E34F760cC499aA0BC915B43B75';
-
     useEffect(() => {
         loadWeb3();
         loadBlockchaindata();

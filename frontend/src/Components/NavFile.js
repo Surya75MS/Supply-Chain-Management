@@ -38,6 +38,9 @@ export const Navbar_Comp = () => {
                             <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active text-white" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active text-white" href="#">Link</a>
                         </li>
                     </ul>
