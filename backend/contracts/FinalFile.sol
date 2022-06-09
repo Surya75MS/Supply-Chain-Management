@@ -90,7 +90,6 @@ contract SupplyChain_Contract {
     //To store all the raw material suppliers on the blockchain
     mapping(uint256 => rawMaterialSupplier) public RMS;
 
-
     //To store information about manufacturer
     struct manufacturer {
         address addr;
@@ -100,7 +99,6 @@ contract SupplyChain_Contract {
     }
     //To store all the manufacturers on the blockchain
     mapping(uint256 => manufacturer) public MAN;
-
 
     //To store information about distributor
     struct distributor {
@@ -112,7 +110,6 @@ contract SupplyChain_Contract {
     //To store all the distributors on the blockchain
     mapping(uint256 => distributor) public DIS;
 
-
     //To store information about retailer
     struct retailer {
         address addr;
@@ -122,7 +119,6 @@ contract SupplyChain_Contract {
     }
     //To store all the retailers on the blockchain
     mapping(uint256 => retailer) public RET;
-    
 
     //To add raw material suppliers. Only contract owner can add a new raw material supplier
     function addRMS(
@@ -268,4 +264,10 @@ contract SupplyChain_Contract {
             STAGE.Init
         );
     }
+
+    // Function to receive Ether. msg.data must be empty
+    receive() external payable {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable {}
 }

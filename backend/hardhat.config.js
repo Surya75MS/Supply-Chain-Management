@@ -6,12 +6,16 @@ const RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
 
 module.exports = {
   solidity: "0.8.4",
+  defaultNetwork: "hardhat",
   networks: {
-    mumbai: {
+    goerli: {
       url: ALCHEMY_API_KEY_URL,
       accounts: [RINKEBY_PRIVATE_KEY],
-      // gas: 21000,
-      // gasPrice: 8000000000
+      gas: 21000,
+      gasPrice: 8000000000
     },
+    hardhat: {
+      chainId: 1337,
+    }
   },
 };

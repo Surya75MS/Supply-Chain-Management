@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3_MS from 'web3/dist/web3.min.js'
 import { address, abi } from "./constants/index";
+import { Navbar_Comp } from './NavFile';
 
 const Register_Comp = () => {
     const [currentaccount, setCurrentaccount] = useState("");
@@ -47,25 +48,19 @@ const Register_Comp = () => {
         const web3 = window.web3;
         const accounts = await web3.eth.getAccounts();
         const account = accounts[0];
-        // console.log(account);
         setCurrentaccount(account);
-        
-        // console.log(networkId);
 
         // const networkId = await web3.eth.net.getId();
         // const networkData = ABI.networks[networkId];
-
-        // console.log(networkData);
-        // console.log("Hello", networkData.address);
-        console.log("Before")
+        // console.log("Before")
         const supplychain = new web3.eth.Contract(abi, address);
         setSupplyChain(supplychain);
-        console.log("After")
+        // console.log("After")
 
         var i;
 
         const rmsCtr = await supplychain.methods.rmsCtr().call();
-        console.log("rmsCtr", rmsCtr);
+        // console.log("rmsCtr", rmsCtr);
         const rms = {};
         for (i = 0; i < rmsCtr; i++) {
             rms[i] = await supplychain.methods.RMS(i + 1).call();
@@ -73,7 +68,7 @@ const Register_Comp = () => {
         setRMS(rms);
 
         const manCtr = await supplychain.methods.manCtr().call();
-        console.log("manCtr", manCtr);
+        // console.log("manCtr", manCtr);
         const man = {};
         for (i = 0; i < manCtr; i++) {
             man[i] = await supplychain.methods.MAN(i + 1).call();
@@ -81,7 +76,7 @@ const Register_Comp = () => {
         setMAN(man);
 
         const disCtr = await supplychain.methods.disCtr().call();
-        console.log("disCtr", disCtr);
+        // console.log("disCtr", disCtr);
         const dis = {};
         for (i = 0; i < disCtr; i++) {
             dis[i] = await supplychain.methods.DIS(i + 1).call();
@@ -89,7 +84,7 @@ const Register_Comp = () => {
         setDIS(dis);
 
         const retCtr = await supplychain.methods.retCtr().call();
-        console.log("retCtr", retCtr);
+        // console.log("retCtr", retCtr);
         const ret = {};
         for (i = 0; i < retCtr; i++) {
             ret[i] = await supplychain.methods.RET(i + 1).call();
@@ -201,136 +196,138 @@ const Register_Comp = () => {
     }
 
     return (
-        <div>
-            <span><b>Current Account Address:</b> {currentaccount}</span>
-            <h4>Raw Material Suppliers:</h4>
-            <form onSubmit={handlerSubmitRMS}>
-                <input className="form-control-sm" type="text" onChange={handlerChangeAddressRMS} placeholder="Ethereum Address" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangeNameRMS} placeholder="Raw Material Supplier Name" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangePlaceRMS} placeholder="Based In" required />
-                <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRMS}>Register</button>
-            </form>
-            <table className="table table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Place</th>
-                        <th scope="col">Ethereum Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(RMS).map(function (key) {
-                        // console.log(key)
-                        return (
-                            <tr key={key}>
-                                <td>{RMS[key].id}</td>
-                                <td>{RMS[key].name}</td>
-                                <td>{RMS[key].place}</td>
-                                <td>{RMS[key].addr}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+        <div className="hero">
+            <Navbar_Comp />
+            <section id="hero" className="hero d-flex align-items-center row" >
+                <h4>Raw Material Suppliers: </h4>
+                <form onSubmit={handlerSubmitRMS}>
+                    <input className="form-control-sm" type="text" onChange={handlerChangeAddressRMS} placeholder="Ethereum Address" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangeNameRMS} placeholder="Raw Material Supplier Name" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangePlaceRMS} placeholder="Based In" required />
+                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRMS}>Register</button>
+                </form>
+                <table className="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Ethereum Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.keys(RMS).map(function (key) {
+                            // console.log(key)
+                            return (
+                                <tr key={key}>
+                                    <td>{RMS[key].id}</td>
+                                    <td>{RMS[key].name}</td>
+                                    <td>{RMS[key].place}</td>
+                                    <td>{RMS[key].addr}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
 
-            <h4>Manufacturers:</h4>
-            <form onSubmit={handlerSubmitMAN}>
-                <input className="form-control-sm" type="text" onChange={handlerChangeAddressMAN} placeholder="Ethereum Address" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangeNameMAN} placeholder="Manufacturer Name" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangePlaceMAN} placeholder="Based In" required />
-                <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMAN}>Register</button>
-            </form>
-            <table className="table table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Place</th>
-                        <th scope="col">Ethereum Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(MAN).map(function (key) {
-                        return (
-                            <tr key={key}>
-                                <td>{MAN[key].id}</td>
-                                <td>{MAN[key].name}</td>
-                                <td>{MAN[key].place}</td>
-                                <td>{MAN[key].addr}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-            <h4>Distributors:</h4>
-            <form onSubmit={handlerSubmitDIS}>
-                <input className="form-control-sm" type="text" onChange={handlerChangeAddressDIS} placeholder="Ethereum Address" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangeNameDIS} placeholder="Distributor Name" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangePlaceDIS} placeholder="Based In" required />
-                <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitDIS}>Register</button>
-            </form>
-            <table className="table table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Place</th>
-                        <th scope="col">Ethereum Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(DIS).map(function (key) {
-                        return (
-                            <tr key={key}>
-                                <td>{DIS[key].id}</td>
-                                <td>{DIS[key].name}</td>
-                                <td>{DIS[key].place}</td>
-                                <td>{DIS[key].addr}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-            <h4>Retailers:</h4>
-            <form onSubmit={handlerSubmitRET}>
-                <input className="form-control-sm" type="text" onChange={handlerChangeAddressRET} placeholder="Ethereum Address" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangeNameRET} placeholder="Retailer Name" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangePlaceRET} placeholder="Based In" required />
-                <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRET}>Register</button>
-            </form>
-            <table className="table table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Place</th>
-                        <th scope="col">Ethereum Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(RET).map(function (key) {
-                        return (
-                            <tr key={key}>
-                                <td>{RET[key].id}</td>
-                                <td>{RET[key].name}</td>
-                                <td>{RET[key].place}</td>
-                                <td>{RET[key].addr}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-            <div>Currentaccount: </div>
-            <div>SupplyChain: { }</div>
-            <div>setloader: {loader.toString()}</div>
-            <div>RMS Address: {RMSaddress}</div>
-            <div>RMS name:{RMSname}</div>
-            <div>RMS place: {RMSplace}</div>
-            <div>RMS: { }</div>
-            <div>MAN: { }</div>
-            <div>DIS: { }</div>
-            <div>RET: { }</div>
+                <h4>Manufacturers: </h4>
+                <form onSubmit={handlerSubmitMAN}>
+                    <input className="form-control-sm" type="text" onChange={handlerChangeAddressMAN} placeholder="Ethereum Address" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangeNameMAN} placeholder="Manufacturer Name" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangePlaceMAN} placeholder="Based In" required />
+                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMAN}>Register</button>
+                </form>
+                <table className="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Ethereum Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.keys(MAN).map(function (key) {
+                            return (
+                                <tr key={key}>
+                                    <td>{MAN[key].id}</td>
+                                    <td>{MAN[key].name}</td>
+                                    <td>{MAN[key].place}</td>
+                                    <td>{MAN[key].addr}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+                <h4>Distributors: </h4>
+                <form onSubmit={handlerSubmitDIS}>
+                    <input className="form-control-sm" type="text" onChange={handlerChangeAddressDIS} placeholder="Ethereum Address" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangeNameDIS} placeholder="Distributor Name" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangePlaceDIS} placeholder="Based In" required />
+                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitDIS}>Register</button>
+                </form>
+                <table className="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Ethereum Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.keys(DIS).map(function (key) {
+                            return (
+                                <tr key={key}>
+                                    <td>{DIS[key].id}</td>
+                                    <td>{DIS[key].name}</td>
+                                    <td>{DIS[key].place}</td>
+                                    <td>{DIS[key].addr}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+                <h4>Retailers: </h4>
+                <form onSubmit={handlerSubmitRET}>
+                    <input className="form-control-sm" type="text" onChange={handlerChangeAddressRET} placeholder="Ethereum Address" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangeNameRET} placeholder="Retailer Name" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangePlaceRET} placeholder="Based In" required />
+                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRET}>Register</button>
+                </form>
+                <table className="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Ethereum Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.keys(RET).map(function (key) {
+                            return (
+                                <tr key={key}>
+                                    <td>{RET[key].id}</td>
+                                    <td>{RET[key].name}</td>
+                                    <td>{RET[key].place}</td>
+                                    <td>{RET[key].addr}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+                <div>Currentaccount: </div>
+                <div>SupplyChain: { }</div>
+                <div>setloader: {loader.toString()}</div>
+                <div>RMS Address: {RMSaddress}</div>
+                <div>RMS name: {RMSname}</div>
+                <div>RMS place: {RMSplace}</div>
+                <div>RMS: { }</div>
+                <div>MAN: { }</div>
+                <div>DIS: { }</div>
+                <div>RET: { }</div>
+            </section>
         </div>
     );
 }

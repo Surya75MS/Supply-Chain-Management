@@ -1,11 +1,13 @@
-export const address = '0xdfe62bd43e140616893E174797D1F63B49f46A20'; //Rinkeby without gas
+// export const address = '0xdfe62bd43e140616893E174797D1F63B49f46A20'; //Rinkeby without gas
 // export const address = '0xf9bAf74664C7f72ed9146a82aEEe9650Aba4e10c'; //Rinkeby with gas
 // export const address = '0x3Aa4691D062a7eAe617E07A60E284a2dD1351454'; // Hardhat network
+export const address = '0xF12338DcDfA20E2e12d28A24090F9aCEda15f2ab'; // Goerli network
 // export const address = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+// export const address = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
+
 // export const address = '0xdfe62bd43e140616893E174797D1F63B49f46A20'; // Mumbai
 
-// export const address = '0x5FbDB2315678afecb367f032d93F642f64180aa3'; //Hardhat network address.
-export const abi =[
+export const abi = [
   {
     "inputs": [],
     "stateMutability": "nonpayable",

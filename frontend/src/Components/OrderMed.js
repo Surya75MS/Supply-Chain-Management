@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3_MS from 'web3/dist/web3.min.js'
 import { address, abi } from "./constants/index";
+import { Navbar_Comp } from './NavFile';
 
 const OrderMed_Comp = () => {
     useEffect(() => {
@@ -79,43 +80,44 @@ const OrderMed_Comp = () => {
         }
     }
     return (
-        <div>
-            <span><b>Current Account Address:</b> {currentaccount}</span>          
-            <br />
-            <h5>Add Medicine Order:</h5>
-            <form onSubmit={handlerSubmitMED}>
-                <input className="form-control-sm" type="text" onChange={handlerChangeNameMED} placeholder="Medicine Name" required />
-                <input className="form-control-sm" type="text" onChange={handlerChangeDesMED} placeholder="Medicine Description" required />
-                <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMED}>Order</button>
-            </form>
-            <br />
-            <h5>Ordered Medicines:</h5>
-            <table className="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Current Stage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(MED).map(function (key) {
-                        return (
-                            <tr key={key}>
-                                <td>{MED[key].id}</td>
-                                <td>{MED[key].name}</td>
-                                <td>{MED[key].description}</td>
-                                <td>
-                                    {
-                                        MedStage[key]
-                                    }
-                                </td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+        <div className="hero">
+            <Navbar_Comp />
+            <section id="hero" className="hero d-flex align-items-center row" style={{ alignContent: "center" }}>
+                <h5>Add Medicine Order:</h5>
+                <form onSubmit={handlerSubmitMED}>
+                    <input className="form-control-sm" type="text" onChange={handlerChangeNameMED} placeholder="Medicine Name" required />
+                    <input className="form-control-sm" type="text" onChange={handlerChangeDesMED} placeholder="Medicine Description" required />
+                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMED}>Order</button>
+                </form>
+                <br />
+                <h5>Ordered Medicines:</h5>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Current Stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.keys(MED).map(function (key) {
+                            return (
+                                <tr key={key}>
+                                    <td>{MED[key].id}</td>
+                                    <td>{MED[key].name}</td>
+                                    <td>{MED[key].description}</td>
+                                    <td>
+                                        {
+                                            MedStage[key]
+                                        }
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </section>
         </div>
     );
 }

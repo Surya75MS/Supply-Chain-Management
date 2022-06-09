@@ -1,10 +1,10 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar_Comp = () => {
     const nav = useNavigate();
 
     return (
-        <header id="header" className="header fixed-top">
+        <header id="header" className="header ">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
                 <a href="/" className="logo d-flex align-items-center">

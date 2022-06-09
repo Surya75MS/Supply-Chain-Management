@@ -50,3 +50,4 @@ Improvements:
 2. Connect wallet button in homescreen has to change to pointer on mouse hover.
 3. Hamburger icon not opening when screen is shrinked.
 4. Improve resuing of code.
+5. Users should not be able to visit adminAccess page via typing URL.

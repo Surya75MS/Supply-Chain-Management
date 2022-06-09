@@ -5,11 +5,13 @@ import { Navbar_Comp } from './NavFile';
 
 const Landing_Comp = () => {
     const owner = '0xa39231a630efd4e34f760cc499aa0bc915b43b75';
+    // const owner = '0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266';
     const nav = useNavigate();
     const [currentAccount, setcurrentAccount] = useState();
     const [State, setState] = useState("");
 
     const Connect = async () => {
+        // Getting wallet address of current account.
         const account = await window.ethereum.request({ method: 'eth_requestAccounts' }).catch((error) => {
             window.alert(error.message);
             return;
