@@ -61,7 +61,6 @@ const Supply_Comp = () => {
 
     }
 
-
     const handlerChangeID = (event) => {
         setID(event.target.value);
     }
@@ -125,12 +124,75 @@ const Supply_Comp = () => {
             alert("An error occured!!!")
         }
     }
-
+    const CheckStakeHolder = async () => {
+        console.log("Im checkStakeHolder");
+        if ((currentaccount == "0xF2a4691ceA64f808Bc0BDC8cC88b2D4D5EE258b8") || (currentaccount == "0x0ABA4444687EE0C530e265924eAEbdCef0c405a9")) {
+            console.log("Im 1");
+            return (
+                <div>
+                    <h5><b>Step 1: Supply Raw Materials</b>(Only a registered Raw Material Supplier can perform this step):-</h5>
+                    <form onSubmit={handlerSubmitRMSsupply}>
+                        <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRMSsupply}>Supply</button>
+                    </form>
+                    <hr />
+                    <br />
+                </div>
+            )
+        }
+        else if ((currentaccount == "0xb7a02bDa554Af52F0f5512B3189A31a06C9EBabD") || (currentaccount == "0x53b72Af02AC3DC780024693a3693E316576DF142")) {
+            console.log("Im 2");
+            return (
+                <div>
+                    Hello
+                    <h5><b>Step 2: Manufacture</b>(Only a registered Manufacturer can perform this step):-</h5>
+                    <form onSubmit={handlerSubmitManufacturing}>
+                        <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitManufacturing}>Manufacture</button>
+                    </form>
+                    <hr />
+                    <br />
+                </div>
+            )
+        }
+        else if ((currentaccount == "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc") || (currentaccount == "0x75835472F72697Cf8659A2B904dCe34b278746fc")) {
+            return (
+                <div>
+                    <h5><b>Step 3: Distribute</b>(Only a registered Distributor can perform this step):-</h5>
+                    <form onSubmit={handlerSubmitDistribute}>
+                        <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitDistribute}>Distribute</button>
+                    </form>
+                    <hr />
+                    <br />
+                </div>
+            )
+        }
+        else if ((currentaccount == "0x90F79bf6EB2c4f870365E785982E1f101E93b906") || (currentaccount == "0x0a8E0D609Fe728B423A2fE49AA629B1142c9b5c4")) {
+            return (
+                <div>
+                    <h5><b>Step 4: Retail</b>(Only a registered Retailer can perform this step):-</h5>
+                    <form onSubmit={handlerSubmitRetail}>
+                        <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRetail}>Retail</button>
+                    </form>
+                    <hr />
+                    <br />
+                    <h5><b>Step 5: Mark as sold</b>(Only a registered Retailer can perform this step):-</h5>
+                    <form onSubmit={handlerSubmitSold}>
+                        <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitSold}>Sold</button>
+                    </form>
+                    <hr />
+                </div>
+            )
+        }
+    }
 
     return (
         <div className="hero">
             <Navbar_Comp />
-            <section id="hero" className="hero d-flex align-items-center row" >
+            <section id="hero" className="hero d-flex align-items-center row" style={{ alignContent: "center" }} >
                 <h6><b>Supply Chain Flow:</b></h6>
                 <p>Medicine Order -&gt; Raw Material Supplier -&gt; Manufacturer -&gt; Distributor -&gt; Retailer -&gt; Consumer</p>
                 <table className="table table-sm table-dark">
@@ -159,40 +221,7 @@ const Supply_Comp = () => {
                         })}
                     </tbody>
                 </table>
-                <h5><b>Step 1: Supply Raw Materials</b>(Only a registered Raw Material Supplier can perform this step):-</h5>
-                <form onSubmit={handlerSubmitRMSsupply}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRMSsupply}>Supply</button>
-                </form>
-                <hr />
-                <br />
-                <h5><b>Step 2: Manufacture</b>(Only a registered Manufacturer can perform this step):-</h5>
-                <form onSubmit={handlerSubmitManufacturing}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitManufacturing}>Manufacture</button>
-                </form>
-                <hr />
-                <br />
-                <h5><b>Step 3: Distribute</b>(Only a registered Distributor can perform this step):-</h5>
-                <form onSubmit={handlerSubmitDistribute}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitDistribute}>Distribute</button>
-                </form>
-                <hr />
-                <br />
-                <h5><b>Step 4: Retail</b>(Only a registered Retailer can perform this step):-</h5>
-                <form onSubmit={handlerSubmitRetail}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitRetail}>Retail</button>
-                </form>
-                <hr />
-                <br />
-                <h5><b>Step 5: Mark as sold</b>(Only a registered Retailer can perform this step):-</h5>
-                <form onSubmit={handlerSubmitSold}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitSold}>Sold</button>
-                </form>
-                <hr />
+                {CheckStakeHolder()}
             </section>
         </div>
 
