@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home_Comp from './Components/HomeFile';
 import Register_Comp from './Components/RegisterFile';
 import Supply_Comp from './Components/SupplyFile';
 import Track_Comp from './Components/TrackFile';
 import OrderMed_Comp from './Components/OrderMed';
-import { Navbar_Comp } from './Components/NavFile';
 import Landing_Comp from './Components/LandingFile';
-import Admin_Comp from './Components/AdminFile';
+import Step_Comp from './Components/Step';
+
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
         <Route path="/ordermed" element={<OrderMed_Comp />} />
         <Route path="/supply" element={<Supply_Comp />} />
         <Route path="/track" element={<Track_Comp />} />
-        <Route path="/AdminAccess" element={<Admin_Comp />} />
+        <Route path="/steps" element={<Step_Comp />} />
       </Routes>
     </div>
   );

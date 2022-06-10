@@ -4,11 +4,7 @@ import Web3 from 'web3/dist/web3.min.js'
 import { Navbar_Comp } from './NavFile';
 
 const Landing_Comp = () => {
-    const owner = '0xa39231a630efd4e34f760cc499aa0bc915b43b75';
-    // const owner = '0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266';
     const nav = useNavigate();
-    const [currentAccount, setcurrentAccount] = useState();
-    const [State, setState] = useState("");
 
     const Connect = async () => {
         // Getting wallet address of current account.
@@ -19,15 +15,7 @@ const Landing_Comp = () => {
         window.alert(`Successfully Connected with ${account[0]}`);
         document.getElementById("ConnectButton").removeEventListener('click', Connect);
         document.getElementById("ConnectButton").innerText = "Successfully Connected!";
-        console.log("Owner: ", owner, typeof (owner));
-        console.log("User: ", account[0], typeof (account[0]));
-
-        if (owner.toString() == account[0].toString()) {
-            nav("/AdminAccess");
-        }
-        else {
-            nav("/UserAccess");
-        }
+        nav("/steps");
     };
 
     function CheckMetamaskInstalled() {

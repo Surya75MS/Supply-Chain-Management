@@ -83,16 +83,18 @@ const OrderMed_Comp = () => {
         <div className="hero">
             <Navbar_Comp />
             <section id="hero" className="hero d-flex align-items-center row" style={{ alignContent: "center" }}>
-                <h5>Add Medicine Order:</h5>
-                <form onSubmit={handlerSubmitMED}>
-                    <input className="form-control-sm" type="text" onChange={handlerChangeNameMED} placeholder="Medicine Name" required />
-                    <input className="form-control-sm" type="text" onChange={handlerChangeDesMED} placeholder="Medicine Description" required />
-                    <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMED}>Order</button>
-                </form>
+                <div style={{ marginLeft: "31%", padding: "3%" }}>
+                    <h5>Order Medicine:</h5>
+                    <form onSubmit={handlerSubmitMED} >
+                        <input className="form-control-sm" type="text" onChange={handlerChangeNameMED} placeholder="Medicine Name" required />
+                        <input className="form-control-sm" type="text" onChange={handlerChangeDesMED} placeholder="Medicine Description" required />
+                        <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitMED}>Order</button>
+                    </form>
+                </div>
                 <br />
                 <h5>Ordered Medicines:</h5>
                 <table className="table table-bordered">
-                    <thead>
+                    <thead className="table-dark">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
@@ -107,10 +109,10 @@ const OrderMed_Comp = () => {
                                     <td>{MED[key].id}</td>
                                     <td>{MED[key].name}</td>
                                     <td>{MED[key].description}</td>
-                                    <td>
+                                    <td><b>
                                         {
                                             MedStage[key]
-                                        }
+                                        }</b>
                                     </td>
                                 </tr>
                             )
