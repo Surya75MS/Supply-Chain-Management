@@ -7,6 +7,7 @@ import Track_Comp from './Components/TrackFile';
 import OrderMed_Comp from './Components/OrderMed';
 import Landing_Comp from './Components/LandingFile';
 import Step_Comp from './Components/Step';
+import Contact_Comp from './Components/ContactFile';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/supply" element={<Supply_Comp />} />
         <Route path="/track" element={<Track_Comp />} />
         <Route path="/steps" element={<Step_Comp />} />
+        <Route path="/contact" element={<Contact_Comp />} />
       </Routes>
     </div>
   );

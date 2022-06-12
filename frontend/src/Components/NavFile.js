@@ -15,7 +15,7 @@ export const Navbar_Comp = () => {
                     <ul>
                         <li><a class="getstarted scrollto" onClick={() => nav("/")}>Home</a></li>
                         <li><a class="getstarted scrollto" onClick={() => nav("/About")}>About</a></li>
-                        <li><a class="getstarted scrollto" onClick={() => nav("/Contact")}>Contact</a></li>
+                        <li><a class="getstarted scrollto" onClick={() => nav("/contact")}>Contact</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav>
