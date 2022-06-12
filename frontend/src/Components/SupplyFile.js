@@ -142,12 +142,11 @@ const Supply_Comp = () => {
             return (
                 <div style={{ margin: "auto auto" }}>
                     <h5><b>Step 2: Enter the ID of received Medicine</b></h5>
+
                     <form onSubmit={handlerSubmitManufacturing}>
                         <input className="form-control-sm" type="text" onChange={handlerChangeID} placeholder="Enter Medicine ID" required />
                         <button className="btn btn-outline-success btn-sm" onSubmit={handlerSubmitManufacturing}>Manufacture</button>
                     </form>
-                    <hr />
-                    <br />
                 </div>
             )
         }
@@ -221,6 +220,8 @@ const Supply_Comp = () => {
                         })}
                     </tbody>
                 </table>
+                <hr />
+                <br />
                 {CheckStakeHolder()}
                 {/* <button onClick={CheckStakeHolder}>Slap me</button> */}
             </section>

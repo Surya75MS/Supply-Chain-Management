@@ -16,14 +16,14 @@ const Contact_Comp = () => {
             <section id="hero" className="hero d-flex align-items-center row" >
                 <div className="create">
                     <form>
-                        <label>Enter your first name:</label>
+                        <label>Enter your name:</label>
                         <input
                             type="text"
                             required
                             value={fname}
                             onChange={(e) => setfname(e.target.value)}
                         />
-                        <label>Enter your second name:</label>
+                        <label>Enter your mobile no:</label>
                         <textarea
                             type="text"
                             required
