@@ -45,7 +45,7 @@ const Landing_Comp = () => {
                             <div data-aos="fade-up" data-aos-delay="600">
                                 <div class="text-center text-lg-start">
                                     <a id="ConnectButton" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                        Connect Wallet!
+                                        Connect with Goerli Chain!
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
