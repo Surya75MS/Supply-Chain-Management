@@ -229,7 +229,9 @@ const Register_Comp = () => {
                         })}
                     </tbody>
                 </table>
-
+                <hr />
+                <br />
+                
                 <h4>Manufacturers: </h4>
                 <form onSubmit={handlerSubmitMAN}>
                     <input className="form-control-sm" type="text" onChange={handlerChangeAddressMAN} placeholder="Ethereum Address" required />
@@ -259,6 +261,9 @@ const Register_Comp = () => {
                         })}
                     </tbody>
                 </table>
+                <hr />
+                <br />
+
                 <h4>Distributors: </h4>
                 <form onSubmit={handlerSubmitDIS}>
                     <input className="form-control-sm" type="text" onChange={handlerChangeAddressDIS} placeholder="Ethereum Address" required />
@@ -288,6 +293,9 @@ const Register_Comp = () => {
                         })}
                     </tbody>
                 </table>
+                <hr />
+                <br />
+
                 <h4>Retailers: </h4>
                 <form onSubmit={handlerSubmitRET}>
                     <input className="form-control-sm" type="text" onChange={handlerChangeAddressRET} placeholder="Ethereum Address" required />
