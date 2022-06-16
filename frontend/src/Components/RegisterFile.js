@@ -317,16 +317,6 @@ const Register_Comp = () => {
                         })}
                     </tbody>
                 </table>
-                <div>Currentaccount: </div>
-                <div>SupplyChain: { }</div>
-                <div>setloader: {loader.toString()}</div>
-                <div>RMS Address: {RMSaddress}</div>
-                <div>RMS name: {RMSname}</div>
-                <div>RMS place: {RMSplace}</div>
-                <div>RMS: { }</div>
-                <div>MAN: { }</div>
-                <div>DIS: { }</div>
-                <div>RET: { }</div>
             </section>
         </div>
     );
