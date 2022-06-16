@@ -99,7 +99,7 @@ const Track_Comp = () => {
             <div className="hero">
                 <Navbar_Comp />
                 <div>
-                    <a href="172.20.10.1" target="_blank"><h4>Track Location: </h4></a>
+                    <a href="http://172.20.10.1" target="_blank"><h4>Track Location: </h4></a>
                 </div>
                 <div className="container-xl">
                     <article className="col-4">
