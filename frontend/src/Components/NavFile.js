@@ -26,7 +26,7 @@ export const Navbar_Comp = () => {
         //     </div>
         // </header>
 
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
@@ -38,9 +38,9 @@ export const Navbar_Comp = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="getstarted scrollto nav-link navs" href="#">Features</a>
-                        <a class="getstarted scrollto nav-link navs" href="#">Pricing</a>
-                        <a class="getstarted scrollto nav-link navs" href="">Disabled</a>
+                        <a class="getstarted scrollto nav-link navs" href="/">Home</a>
+                        <a class="getstarted scrollto nav-link navs" href="/working">Take a tour</a>
+                        <a class="getstarted scrollto nav-link navs" href="/contact">Contact</a>
                     </div>
                 </div>
 
