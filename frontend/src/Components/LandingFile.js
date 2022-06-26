@@ -33,7 +33,7 @@ const Landing_Comp = () => {
     }, []);
 
     return (
-        <div>
+        <div >
             <Navbar_Comp />
             <section id="hero" className="hero d-flex align-items-center">
 
